@@ -25,7 +25,6 @@ if __name__ == "__main__":
     # 格式化输出JSON数据
     if products:
         json_data = json.dumps(products, indent=2, ensure_ascii=False)
-        print(json_data)
         
         # 保存到本地文件
         output_path = "data/products.json"
