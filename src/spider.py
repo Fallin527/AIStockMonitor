@@ -16,12 +16,10 @@ async def fetch_product_info():
     """使用Playwright实现的手机浏览器商品爬虫."""
     try:
         async with async_playwright() as p:
-
-            
             # 启动Chromium浏览器并设置移动端视口
             browser = await p.chromium.launch(
-                headless=False,  # 启用有头模式
-                slow_mo=500   # 减慢操作速度便于观察
+                headless=True,  # 生产环境应启用无头模式
+                slow_mo=100  # 适当减少延迟
             )
             context = await browser.new_context(
                 user_agent=MOBILE_USER_AGENT,

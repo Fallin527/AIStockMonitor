@@ -3,10 +3,6 @@ import asyncio
 import logging
 import json
 import os
-import sys
-
-# 添加src目录到系统路径
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
 # 配置日志记录
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
