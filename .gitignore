@@ -4,13 +4,8 @@ __pycache__/
 build/
 dist/
 wheels/
-*.egg-info
-
-# Virtual environments
-.env
-
-# 敏感配置文件
-config.toml
-
-# IDE配置文件
 .idea/
+data/
+debug_screenshots/
+.venv/
+config.toml

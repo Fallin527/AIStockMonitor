@@ -1,0 +1,14 @@
+# 项目元数据
+[project]
+name = "AIStockMonitor"
+version = "0.1.0"
+description = "AI Stock Monitor Application"
+requires-python = ">=3.12"
+
+# 依赖项
+dependencies = [
+    "playwright",
+    "beautifulsoup4",
+    "toml",
+    "python-telegram-bot"
+]
