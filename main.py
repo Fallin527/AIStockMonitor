@@ -1,8 +1,9 @@
 import toml
-import asyncio
 import logging
 import json
 import os
+
+from src.spider import fetch_product_info
 
 # 配置日志记录
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -19,8 +20,8 @@ if __name__ == "__main__":
 
     # 获取商品信息
     logging.debug("开始爬取商品信息...")
-    from src.spider import fetch_product_info
-    products = asyncio.run(fetch_product_info())
+
+    products = fetch_product_info()
     
     # 格式化输出JSON数据
     if products:
