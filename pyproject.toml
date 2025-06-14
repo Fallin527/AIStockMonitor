@@ -10,5 +10,7 @@ dependencies = [
     "playwright",
     "beautifulsoup4",
     "toml",
-    "python-telegram-bot"
+    "python-telegram-bot",
+    "requests>=2.32.4",
+    "lxml>=5.4.0",
 ]
