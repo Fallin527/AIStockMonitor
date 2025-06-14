@@ -1,0 +1,46 @@
+[
+  {
+    "name": "谷歌账号 | Gmail邮箱 | YouTube油管账号 | 售后15天",
+    "threshold": 10
+  },
+  {
+    "name": "ChatGPT Plus包月会员 | 代开付款 | 正规支付 | 安全质保",
+    "threshold": 0
+  },
+  {
+    "name": "美区苹果ID + Shadowrocket小火箭 | 独享号 | 可改密保 | 售后1个月",
+    "threshold": 5
+  },
+  {
+    "name": "Apple ID | 美国苹果ID | 独享号 | 可改密保 | 售后1个月",
+    "threshold": 5
+  },
+  {
+    "name": "Apple ID | 香港苹果ID | 独享号 | 可改密保 | 售后1个月",
+    "threshold": 0
+  },
+  {
+    "name": "Apple ID | 日本苹果ID | 独享号 | 可改密保 | 售后1个月",
+    "threshold": 0
+  },
+  {
+    "name": "Apple ID | 台湾苹果ID | 独享号 | 可改密保 | 售后1个月",
+    "threshold": 0
+  },
+  {
+    "name": "Apple ID | 韩国苹果ID | 独享号 | 可改密保 | 售后1个月",
+    "threshold": 0
+  },
+  {
+    "name": "美国苹果ID专用 | Shadowrocket | 小火箭 | 兑换码",
+    "threshold": 2
+  },
+  {
+    "name": "香港苹果ID专用 | Shadowrocket | 小火箭 | 兑换码",
+    "threshold": 2
+  },
+  {
+    "name": "苹果礼品卡 | 美国Apple Store | 10USD 美元 | Apple Gift Card",
+    "threshold": 0
+  }
+]

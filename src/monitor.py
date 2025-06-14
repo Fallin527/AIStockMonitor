@@ -1,10 +1,7 @@
 import time
 import logging
-import json
 from datetime import datetime
-import asyncio
 from src.telegram_bot import TelegramBot  # 导入Telegram Bot模块
-from telegram.error import NetworkError, RetryAfter  # 导入Telegram网络异常类
 
 
 class StockMonitor:
@@ -70,11 +67,7 @@ class StockMonitor:
                         f"阈值：{threshold}\n"
                         f"时间戳：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
                     )
-                    
-                    # 控制台打印库存预警信息
-                    print(warning_msg)
-                    logging.warning(warning_msg)
-                    
+
                     # 发送Telegram消息
                     try:
                         self.telegram_bot.send_message(warning_msg)

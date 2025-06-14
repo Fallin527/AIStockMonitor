@@ -1,6 +1,5 @@
 import requests
 import logging
-import os
 from bs4 import BeautifulSoup
 import toml
 
@@ -92,9 +91,9 @@ def fetch_product_info():
             # 解析商品信息
             products = parse_product_content(response.text)
             
-            # 保存页面源码用于调试（使用utf-8-sig避免BOM问题）
-            with open(os.path.join(SCREENSHOT_PATH, "page_source.html"), "w", encoding="utf-8-sig") as f:
-                f.write(response.text)
+            # # 保存页面源码用于调试（使用utf-8-sig避免BOM问题）
+            # with open(os.path.join(SCREENSHOT_PATH, "page_source.html"), "w", encoding="utf-8-sig") as f:
+            #     f.write(response.text)
             
             logging.debug(f'成功解析 {len(products)} 个商品数据')
             return products if products else None

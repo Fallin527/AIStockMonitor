@@ -2,8 +2,6 @@ import sys  # 添加sys模块用于日志输出
 import json
 import toml
 import logging
-from datetime import datetime
-from apscheduler.schedulers.blocking import BlockingScheduler
 
 # 项目内模块
 from src.monitor import StockMonitor
@@ -54,10 +52,6 @@ def main():
     """
     主函数：启动库存监控系统
     """
-
-    logging.debug("初始化配置")
-    logging.debug(f"检测间隔: {config['monitor']['interval']}分钟")
-    logging.debug(f"Telegram Bot Token: {config['telegram']['bot_token']}")
 
     # 加载预设商品信息
     pre_configured_products = load_products()
