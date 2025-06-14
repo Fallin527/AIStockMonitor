@@ -62,13 +62,12 @@ def main():
     # 加载预设商品信息
     pre_configured_products = load_products()
 
-
     # 创建库存监控器
     monitor = StockMonitor(config, pre_configured_products)
     # 创建调度器
     scheduler = MonitorScheduler(config, monitor)
     # 启动系统
-    logging.info("启动库存监控系统...")
+    logging.info("启动库存监控")
     scheduler.start()
 
     # 添加监控任务

@@ -12,6 +12,7 @@ dependencies = [
     "pytoml>=0.1.21",
     "requests>=2.32.4",
     "toml>=0.10.2",
+    "python-telegram-bot>=22.1",
 ]
 
 [project.scripts]
