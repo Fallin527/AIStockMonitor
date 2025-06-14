@@ -12,7 +12,3 @@ dependencies = [
     "toml>=0.10.2",
     "python-telegram-bot>=22.1",
 ]
-
-[project.scripts]
-run = "python main.py"
-start = "-m main"
