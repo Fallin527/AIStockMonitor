@@ -1,21 +1,26 @@
 import requests
 import logging
 import os
-import time
 from bs4 import BeautifulSoup
+import toml
+
+# 读取配置文件
+with open('config.toml', 'r', encoding='utf-8') as f:
+    config = toml.load(f)
+
+# 从配置文件获取参数
+MOBILE_USER_AGENT = config['spider']['mobile_user_agent']
+TARGET_URL = config['spider']['target_url']
+REQUIRED_COOKIE = {
+    "name": config['spider']['cookie_name'],
+    "value": config['spider']['cookie_value']
+}
+SCREENSHOT_PATH = "debug_screenshots"
 
 # 配置日志记录
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # 基础配置常量
-MOBILE_USER_AGENT = "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
-SCREENSHOT_PATH = "debug_screenshots"
-TARGET_URL = "https://80lp.com/mobile"
-REQUIRED_COOKIE = {
-    "name": "BL_encrypt_c21f969b5f03d33d43e04f8f136e7682",
-    "value": "c69012c4f51807cf3155bf9a5bed0356",
-    "url": "https://80lp.com"
-}
 
 def parse_product_content(content):
     """解析商品页面内容，提取商品信息."""
@@ -68,7 +73,7 @@ def fetch_product_info():
     
     # 设置Cookie
     cookies = {
-        'BL_encrypt_c21f969b5f03d33d43e04f8f136e7682': 'c69012c4f51807cf3155bf9a5bed0356'
+        config['spider']['cookie_name']: config['spider']['cookie_value']
     }
     
     try:
