@@ -2,6 +2,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 import time
 import logging
 import json
+import datetime  # 修正为完整datetime模块导入
 
 
 class MonitorScheduler(BlockingScheduler):
@@ -14,7 +15,24 @@ class MonitorScheduler(BlockingScheduler):
 
     def _run_check(self):
         """执行库存检查任务"""
-        logging.info(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - 开始库存检查")
+        logging.info("开始库存检查")
+        
+        # 新增时间判断逻辑
+        try:
+            snooze_start = int(self.config['monitor'].get('snooze_start', 0))
+            snooze_end = int(self.config['monitor'].get('snooze_end', 6))
+            current_hour = datetime.datetime.now().hour
+            
+            # 验证时间范围有效性
+            if not (0 <= snooze_start < 24 and 0 < snooze_end <= 24):
+                logging.warning("免打扰时间配置超出有效范围（0-24），使用默认值")
+                snooze_start, snooze_end = 0, 6
+
+            if snooze_start <= current_hour < snooze_end:
+                logging.info(f"当前时间在{snooze_start}:00-{snooze_end}:00之间，跳过本次库存检查")
+                return
+        except ValueError:
+            logging.error("免打扰时间配置必须为整数，跳过时间检查")
 
         # 获取实时商品信息
         from src.spider import fetch_product_info
